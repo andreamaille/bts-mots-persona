@@ -1,0 +1,154 @@
+
+.persona-section {
+    width: 100%;
+    height:100vh;
+    background-color: $dark;
+}
+
+.persona {
+    width:100%;
+    padding:25px;
+    background-color:$dark;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    .persona-card {
+        background-color: transparent;
+        width: 25%;
+        height: 200px;
+        border: 2.5px solid $darkest;
+        perspective: 1000px; 
+        align-self: flex-start;
+        
+    }
+
+    .persona-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .persona-text,
+    .persona-lyrics {
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+    .persona-text {
+        color: black;
+        transform: rotate(-10deg);
+    }
+
+    .persona-lyrics {
+        width:100%;
+        height:100%;
+        background-color: $light;
+        color: $white;
+        transform: rotateY(180deg);
+    }
+    
+}
+
+.persona-card:hover .persona-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+// Masonry Layout
+.persona-card:nth-child(2), 
+.persona-card:nth-child(8) {
+    width:50%;
+}
+
+.persona-card:nth-child(10) {
+    width:25%;
+    height:400px;
+}
+
+.persona-card:nth-child(11),
+.persona-card:nth-child(12),
+.persona-card:nth-child(13) {
+    margin-top: -200px;
+}
+
+
+
+
+
+
+// Word Animation
+.persona-text span {
+    display: inline-block;
+    @include displayFont (50);
+    font-weight: 800;
+    text-shadow: 
+        1px 2px 0 $mediumLight, 
+        2px 3px 0 $mediumLight, 
+        3px 4px 0 $mediumLight, 
+        4px 5px 0 $mediumLight, 
+        5px 6px 0 $mediumLight, 
+        6px 7px 0 $mediumLight, 
+        7px 8px 0 $mediumLight, 
+        8px 9px 0 $mediumLight, 
+        9px 10px 0 $mediumLight, 
+        10px 20px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.persona-text span:nth-child(1) {
+    animation: wave-text 3s ease-out infinite;
+}
+
+
+
+
+.persona-text span:nth-child(2) {
+    animation: wave-text 4s ease-out infinite;
+}
+
+.persona-text span:nth-child(3) {
+    animation: wave-text 5s ease-out infinite;
+}
+
+.persona-text span:nth-child(4) {
+    animation: wave-text 6s ease-out infinite;
+}
+
+.persona-text span:nth-child(5) {
+    animation: wave-text 7s ease-out infinite;
+}
+
+.persona-text span:nth-child(6) {
+    animation: wave-text 8s ease-out infinite;
+}
+
+.persona-text span:nth-child(7) {
+    animation: wave-text 9s ease-out infinite;
+}
+
+
+.persona-lyrics p {
+    z-index:100;
+}
+
+
+
+@keyframes wave-text {
+    0% {
+        transform : scale(1);
+    }
+
+    50% {
+        transform : scale(1.2);
+    }
+
+    100% {
+        transform : scale(1);
+    }
+}

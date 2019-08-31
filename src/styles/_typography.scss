@@ -1,0 +1,21 @@
+html {
+    font-size: 125%;
+}
+
+@mixin displayFont ($sizeValue) {
+    font-size: ($sizeValue/20) * 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight:300;
+    color:$white;
+    text-transform: uppercase;
+}
+
+@mixin bodyFont ($sizeValue) {
+    color:$white;
+    font-size: ($sizeValue/20) * 1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+p, a {
+    @include bodyFont (18)
+}

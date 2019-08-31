@@ -1,0 +1,25 @@
+$white:#fefefe;
+$light: #fa8e9e;
+$mediumLight: #f891a2;
+$mediumDark: #fa8e9e;
+$dark: #f87498;
+$darkest: #e2658b;
+$black: #171b1a; 
+
+
+
+$border: 2px solid $white;
+
+$transition-bg: background 0.5s ease;
+
+@mixin colors ($color, $background-color) {
+    color:$color;
+    background-color:$background-color;
+}
+
+@mixin alignment ($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
